@@ -1,13 +1,19 @@
-package com.example.nikola.nbateamwiki;
+package com.example.nikola.nbateamwiki.views;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class MainActivity extends AppCompatActivity {
+import com.example.nikola.nbateamwiki.R;
+
+public class MainTeamPageActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+    }
+
+    @Override
+    public void getDrawer() {
+
     }
 }
