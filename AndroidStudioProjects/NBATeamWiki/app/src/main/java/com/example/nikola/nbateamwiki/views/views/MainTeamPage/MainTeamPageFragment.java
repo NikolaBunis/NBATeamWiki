@@ -35,6 +35,9 @@ public class MainTeamPageFragment extends Fragment {
         addBackgroundImage(view);
 
 
+
+
+
         return view;
 
     }
