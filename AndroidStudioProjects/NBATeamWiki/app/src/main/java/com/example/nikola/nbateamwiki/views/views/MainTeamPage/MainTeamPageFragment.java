@@ -30,12 +30,18 @@ public class MainTeamPageFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view =  inflater.inflate(R.layout.fragment_main_team_page_fragment, container, false);
+        View view = inflater.inflate(R.layout.fragment_main_team_page_fragment, container, false);
+
+        addBackgroundImage(view);
 
 
+        return view;
 
+    }
+
+    private void addBackgroundImage(View view) {
         StorageReference gsReference = FirebaseStorage.getInstance()
-                .getReferenceFromUrl("gs://nbateamwiki.appspot.com/Golden-State-Warriors-2013-14-Logo-psd95373.png");
+                .getReferenceFromUrl("gs://nbateamwiki.appspot.com/backgrounds/MainActivityBackground.jpg");
 
         ImageView imageView = view.findViewById(R.id.background_image);
 
@@ -43,10 +49,6 @@ public class MainTeamPageFragment extends Fragment {
                 .using(new FirebaseImageLoader())
                 .load(gsReference)
                 .into(imageView);
-
-
-
-        return view;
 
     }
 
