@@ -3,9 +3,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".views.views.TeamInfoPage.TeamInfoFragment">
+    tools:context=".views.TeamInfoPage.TeamInfoFragment">
 
-
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 <RelativeLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent">
@@ -17,11 +19,12 @@
         android:scaleType="centerCrop"/>
 
     <TextView
+        android:id="@+id/team_info_text"
         android:layout_below="@id/team_info_picture"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Team history here" />
+        android:text=" " />
 
 </RelativeLayout>
-
+</ScrollView>
 </FrameLayout>

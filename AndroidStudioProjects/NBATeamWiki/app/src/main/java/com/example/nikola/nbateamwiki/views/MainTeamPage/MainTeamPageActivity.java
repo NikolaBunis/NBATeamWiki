@@ -1,12 +1,12 @@
-package com.example.nikola.nbateamwiki.views.views.TeamInfoPage;
+package com.example.nikola.nbateamwiki.views.MainTeamPage;
 
 import android.app.Fragment;
 import android.os.Bundle;
 
 import com.example.nikola.nbateamwiki.R;
-import com.example.nikola.nbateamwiki.views.views.BaseActivity;
+import com.example.nikola.nbateamwiki.views.base.BaseActivity;
 
-public class TeamInfoActivity extends BaseActivity {
+public class MainTeamPageActivity extends BaseActivity {
 
     private Fragment mToolbarFragment;
     private Fragment mMainViewFragment;
@@ -14,10 +14,12 @@ public class TeamInfoActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_team_info);
+        setContentView(R.layout.activity_main_team_page);
 
         mToolbarFragment = setupDrawer();
         mMainViewFragment = setupMainFragment();
+
+
 
 
     }
@@ -25,7 +27,8 @@ public class TeamInfoActivity extends BaseActivity {
 
     @Override
     public Fragment setupMainFragment() {
-        Fragment fragment = TeamInfoFragment.newInstance();
+
+        Fragment fragment = MainTeamPageFragment.newInstance();
 
         getFragmentManager().beginTransaction().replace(R.id.main_fragment, fragment).commit();
 

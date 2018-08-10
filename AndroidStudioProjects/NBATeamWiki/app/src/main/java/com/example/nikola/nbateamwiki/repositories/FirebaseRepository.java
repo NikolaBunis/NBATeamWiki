@@ -1,5 +1,6 @@
-package com.example.nikola.nbateamwiki.views.views.repositories.base;
+package com.example.nikola.nbateamwiki.repositories;
 
+import com.example.nikola.nbateamwiki.repositories.base.Repository;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.List;

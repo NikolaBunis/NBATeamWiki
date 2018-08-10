@@ -1,9 +1,10 @@
-package com.example.nikola.nbateamwiki.views.views;
+package com.example.nikola.nbateamwiki.views.base;
 
 import android.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 
 import com.example.nikola.nbateamwiki.R;
+import com.example.nikola.nbateamwiki.views.DrawerAndTitleFragment;
 
 public abstract class BaseActivity extends AppCompatActivity {
 

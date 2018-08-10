@@ -1,4 +1,4 @@
-package com.example.nikola.nbateamwiki.views.views.TeamInfoPage;
+package com.example.nikola.nbateamwiki.views.TeamInfoPage;
 
 
 import android.os.Bundle;
@@ -7,12 +7,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.example.nikola.nbateamwiki.R;
-import com.example.nikola.nbateamwiki.views.views.repositories.base.FirebaseRepository;
-import com.example.nikola.nbateamwiki.views.views.repositories.base.Repository;
+import com.example.nikola.nbateamwiki.models.TextHolder;
 import com.firebase.ui.storage.images.FirebaseImageLoader;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
@@ -36,7 +38,7 @@ public class TeamInfoFragment extends Fragment {
 
 addPicture(view);
 
-addText();
+addText(view);
 
 
 
@@ -46,7 +48,27 @@ addText();
         return view;
     }
 
-    private void addText() {
+    private void addText(View view) {
+       FirebaseFirestore db = FirebaseFirestore.getInstance();
+        final String[] text = new String[1];
+        TextView textView = view.findViewById(R.id.team_info_text);
+
+        db.collection("texts")
+                .document("hqpuiHeV1lVRJNbD6HA8")
+                .get()
+                .addOnCompleteListener(task -> {
+                    DocumentSnapshot doc = task.getResult();
+
+                    TextHolder obj =  doc.toObject(TextHolder.class);
+
+                    text[0] = obj.getText();
+
+                    textView.setText(text[0]);
+                });
+
+
+
+
 
     }
 

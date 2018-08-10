@@ -1,4 +1,4 @@
-package com.example.nikola.nbateamwiki.views.views;
+package com.example.nikola.nbateamwiki.views;
 
 
 import android.os.Bundle;
@@ -13,7 +13,6 @@ import com.mikepenz.materialdrawer.Drawer;
 import com.mikepenz.materialdrawer.DrawerBuilder;
 import com.mikepenz.materialdrawer.model.DividerDrawerItem;
 import com.mikepenz.materialdrawer.model.PrimaryDrawerItem;
-import com.mikepenz.materialdrawer.model.SecondaryDrawerItem;
 
 /**
  * A simple {@link Fragment} subclass.

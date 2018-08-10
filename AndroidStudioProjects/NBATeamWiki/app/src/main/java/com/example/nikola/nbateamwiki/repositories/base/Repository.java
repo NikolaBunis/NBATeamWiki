@@ -1,4 +1,4 @@
-package com.example.nikola.nbateamwiki.views.views.repositories.base;
+package com.example.nikola.nbateamwiki.repositories.base;
 
 import java.util.List;
 import java.util.function.Consumer;

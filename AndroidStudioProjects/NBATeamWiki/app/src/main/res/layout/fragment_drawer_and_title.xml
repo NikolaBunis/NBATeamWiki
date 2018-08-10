@@ -6,7 +6,7 @@
     android:layout_height="wrap_content"
     android:background="@color/main_blue"
     android:orientation="horizontal"
-    tools:context=".views.views.DrawerAndTitleFragment">
+    tools:context=".views.DrawerAndTitleFragment">
 
 
     <android.support.v7.widget.Toolbar
