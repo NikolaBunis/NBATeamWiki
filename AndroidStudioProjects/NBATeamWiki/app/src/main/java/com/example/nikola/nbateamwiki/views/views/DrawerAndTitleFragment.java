@@ -1,4 +1,4 @@
-package com.example.nikola.nbateamwiki.views.views.MainTeamPage;
+package com.example.nikola.nbateamwiki.views.views;
 
 
 import android.os.Bundle;
@@ -53,8 +53,11 @@ public class DrawerAndTitleFragment extends Fragment {
     public void setupDrawer() {
 
         //if you want to update the items at a later time it is recommended to keep it in a variable
-        PrimaryDrawerItem item1 = new PrimaryDrawerItem().withIdentifier(1).withName("Full Team Roster");
-        SecondaryDrawerItem item2 = new SecondaryDrawerItem().withIdentifier(2).withName("List of Guards");
+        PrimaryDrawerItem item1 = new PrimaryDrawerItem().withIdentifier(1).withName("Home");
+        PrimaryDrawerItem item2 = new PrimaryDrawerItem().withIdentifier(2).withName("Team Info");
+        PrimaryDrawerItem item3 = new PrimaryDrawerItem().withIdentifier(3).withName("Team History");
+        PrimaryDrawerItem item4 = new PrimaryDrawerItem().withIdentifier(4).withName("Full Roster");
+        PrimaryDrawerItem item5 = new PrimaryDrawerItem().withIdentifier(5).withName("Your starting 5");
 
 //create the drawer and remember the `Drawer` result object
         Drawer result = new DrawerBuilder()
@@ -64,7 +67,13 @@ public class DrawerAndTitleFragment extends Fragment {
                         item1,
                         new DividerDrawerItem(),
                         item2,
-                        new SecondaryDrawerItem()
+                        new PrimaryDrawerItem(),
+                        item3,
+                        new PrimaryDrawerItem(),
+                        item4,
+                        new PrimaryDrawerItem(),
+                        item5,
+                        new PrimaryDrawerItem()
                 )
                 /*.withOnDrawerItemClickListener(new Drawer.OnDrawerItemClickListener() {
                     @Override

@@ -2,6 +2,7 @@ package com.example.nikola.nbateamwiki.views.views.MainTeamPage;
 
 
 import android.app.Fragment;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,6 +11,7 @@ import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
 import com.example.nikola.nbateamwiki.R;
+import com.example.nikola.nbateamwiki.views.views.TeamInfoPage.TeamInfoActivity;
 import com.firebase.ui.storage.images.FirebaseImageLoader;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
@@ -21,6 +23,8 @@ import static com.google.firebase.storage.FirebaseStorage.getInstance;
  */
 public class MainTeamPageFragment extends Fragment {
 
+
+    private View mTeamInfoButton;
 
     public MainTeamPageFragment() {
         // Required empty public constructor
@@ -34,11 +38,24 @@ public class MainTeamPageFragment extends Fragment {
 
         addBackgroundImage(view);
 
+mTeamInfoButton = view.findViewById(R.id.team_info_button);
+mTeamInfoButton.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View v) {
+        launchTeamInfoActivity();
+    }
+});
 
 
 
 
         return view;
+
+    }
+
+    private void launchTeamInfoActivity() {
+        Intent intent = new Intent(getActivity(), TeamInfoActivity.class);
+        startActivity(intent);
 
     }
 
