@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.nikola.nbateamwiki.R;
+import com.example.nikola.nbateamwiki.views.Gallery.GalleryActivity;
 import com.example.nikola.nbateamwiki.views.MainTeamPage.MainTeamPageActivity;
 import com.example.nikola.nbateamwiki.views.TeamInfoPage.TeamInfoActivity;
 import com.example.nikola.nbateamwiki.views.base.BaseActivity;
@@ -61,7 +62,7 @@ public class DrawerAndTitleFragment extends Fragment {
         //if you want to update the items at a later time it is recommended to keep it in a variable
         PrimaryDrawerItem item1 = new PrimaryDrawerItem().withIdentifier(MainTeamPageActivity.IDENTIFIER).withName("Home");
         PrimaryDrawerItem item2 = new PrimaryDrawerItem().withIdentifier(TeamInfoActivity.IDENTIFIER).withName("Team Info");
-        PrimaryDrawerItem item3 = new PrimaryDrawerItem().withIdentifier(3).withName("Team History");
+        PrimaryDrawerItem item3 = new PrimaryDrawerItem().withIdentifier(3).withName("Gallery");
         PrimaryDrawerItem item4 = new PrimaryDrawerItem().withIdentifier(4).withName("Full Roster");
         PrimaryDrawerItem item5 = new PrimaryDrawerItem().withIdentifier(5).withName("Your starting 5");
 
@@ -111,6 +112,18 @@ public class DrawerAndTitleFragment extends Fragment {
                                 return true;
                             }
                         }
+
+                        else if (identifier == GalleryActivity.IDENTIFIER) {
+                            if (getActivity().getClass().equals(GalleryActivity.class))
+                                return false;
+                            else {
+                                Intent intent = new Intent(getContext(), GalleryActivity.class);
+
+                                startActivity(intent);
+                                return true;
+                            }
+                        }
+
                         return false;
 
                     }

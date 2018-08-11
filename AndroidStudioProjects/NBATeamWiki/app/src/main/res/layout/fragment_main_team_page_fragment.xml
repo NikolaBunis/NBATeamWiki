@@ -35,7 +35,7 @@
                 android:id="@+id/team_history_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Team History"
+                android:text="Gallery"
                 android:layout_alignParentRight="true"
                 android:layout_alignParentTop="true"
                 />

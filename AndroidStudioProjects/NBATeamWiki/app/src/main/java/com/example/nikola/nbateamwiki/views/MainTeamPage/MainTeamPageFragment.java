@@ -11,6 +11,7 @@ import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
 import com.example.nikola.nbateamwiki.R;
+import com.example.nikola.nbateamwiki.views.Gallery.GalleryActivity;
 import com.example.nikola.nbateamwiki.views.TeamInfoPage.TeamInfoActivity;
 import com.firebase.ui.storage.images.FirebaseImageLoader;
 import com.google.firebase.storage.FirebaseStorage;
@@ -25,6 +26,7 @@ public class MainTeamPageFragment extends Fragment {
 
 
     private View mTeamInfoButton;
+    private View mGalleryButton;
 
     public MainTeamPageFragment() {
         // Required empty public constructor
@@ -38,22 +40,36 @@ public class MainTeamPageFragment extends Fragment {
 
         addBackgroundImage(view);
 
-mTeamInfoButton = view.findViewById(R.id.team_info_button);
-mTeamInfoButton.setOnClickListener(new View.OnClickListener() {
-    @Override
-    public void onClick(View v) {
-        launchTeamInfoActivity();
-    }
-});
+        mTeamInfoButton = view.findViewById(R.id.team_info_button);
+        mTeamInfoButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                launchTeamInfoActivity();
+            }
+        });
 
+//trying different codes to initiate onClick events
 
+        mGalleryButton = view.findViewById(R.id.team_history_button);
+        mGalleryButton.setOnClickListener(item -> {
+            launchGalleryActivity();
+        });
 
 
         return view;
 
     }
 
+    private void launchGalleryActivity() {
+        Intent intent = new Intent(getActivity(), GalleryActivity.class);
+        startActivity(intent);
+
+
+    }
+
     private void launchTeamInfoActivity() {
+
+
         Intent intent = new Intent(getActivity(), TeamInfoActivity.class);
         startActivity(intent);
 
