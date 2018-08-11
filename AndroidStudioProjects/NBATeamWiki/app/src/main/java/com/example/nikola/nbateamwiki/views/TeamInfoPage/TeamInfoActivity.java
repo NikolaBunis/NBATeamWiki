@@ -10,6 +10,7 @@ public class TeamInfoActivity extends BaseActivity {
 
     private Fragment mToolbarFragment;
     private Fragment mMainViewFragment;
+    public static final long IDENTIFIER = 2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,5 +31,10 @@ public class TeamInfoActivity extends BaseActivity {
         getFragmentManager().beginTransaction().replace(R.id.main_fragment, fragment).commit();
 
         return fragment;
+    }
+
+    @Override
+    public long getIdentifier() {
+        return IDENTIFIER;
     }
 }

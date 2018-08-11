@@ -19,4 +19,6 @@ public Fragment setupDrawer(){
 
 public abstract Fragment setupMainFragment();
 
+public abstract long getIdentifier();
+
 }
