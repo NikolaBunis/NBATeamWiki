@@ -19,7 +19,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".views.TeamInfoPage.TeamInfoActivity" />
-        <activity android:name=".views.Gallery.GalleryActivity"></activity>
+        <activity android:name=".views.Gallery.GalleryActivity" />
+        <activity android:name=".views.Gallery.FullImageActivity"></activity>
     </application>
 
 </manifest>

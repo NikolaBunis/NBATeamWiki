@@ -1,4 +1,4 @@
-package com.example.nikola.nbateamwiki.models;
+package com.example.nikola.nbateamwiki.utils;
 
 public class TextHolder {
 //a string to designate which activity the text is for

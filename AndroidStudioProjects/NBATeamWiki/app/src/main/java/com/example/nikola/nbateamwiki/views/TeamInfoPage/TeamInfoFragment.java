@@ -11,7 +11,7 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.example.nikola.nbateamwiki.R;
-import com.example.nikola.nbateamwiki.models.TextHolder;
+import com.example.nikola.nbateamwiki.utils.TextHolder;
 import com.firebase.ui.storage.images.FirebaseImageLoader;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
