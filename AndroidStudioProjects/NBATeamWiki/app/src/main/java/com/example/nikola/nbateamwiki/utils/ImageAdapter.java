@@ -19,6 +19,9 @@ public class ImageAdapter extends BaseAdapter {
             "https://firebasestorage.googleapis.com/v0/b/nbateamwiki.appspot.com/o/gallery%2FBest-Golden-State-Warriors-Logo-Wallpaper.jpg?alt=media&token=1da8f959-5579-487a-b7fc-7561490fc9df",
             "https://firebasestorage.googleapis.com/v0/b/nbateamwiki.appspot.com/o/gallery%2Fgolden-state-warriors.jpg?alt=media&token=14b4333e-6474-4997-bb45-e9ff4b188515",
             "https://firebasestorage.googleapis.com/v0/b/nbateamwiki.appspot.com/o/gallery%2Fhttps_%252F%252Fhypebeast.com%252Fimage%252F2018%252F06%252Fgolden-state-warriors-2018-nba-championship-win-0.jpg?alt=media&token=afe81109-ec00-468f-92bc-3200bc65961b",
+            "https://firebasestorage.googleapis.com/v0/b/nbateamwiki.appspot.com/o/gallery%2FGolden-State-Warriors-Parade.jpg?alt=media&token=231de2a2-6c1d-49ac-88ff-536f4c6512b5",
+            "https://firebasestorage.googleapis.com/v0/b/nbateamwiki.appspot.com/o/gallery%2Fgolden-state-warriors-2017-nba-finals.jpg?alt=media&token=5aba2b78-6554-42c9-98fc-1e040183fd4c",
+            "https://firebasestorage.googleapis.com/v0/b/nbateamwiki.appspot.com/o/gallery%2F25warriors-web-facebookJumbo.jpg?alt=media&token=6d61c21b-3926-49d9-aaeb-92c84465ae23",
 
     };
 
