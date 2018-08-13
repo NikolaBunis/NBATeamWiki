@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.nikola.nbateamwiki.R;
+import com.example.nikola.nbateamwiki.views.FullRoster.FullRosterActivity;
 import com.example.nikola.nbateamwiki.views.Gallery.GalleryActivity;
 import com.example.nikola.nbateamwiki.views.MainTeamPage.MainTeamPageActivity;
 import com.example.nikola.nbateamwiki.views.TeamInfoPage.TeamInfoActivity;
@@ -62,8 +63,8 @@ public class DrawerAndTitleFragment extends Fragment {
         //if you want to update the items at a later time it is recommended to keep it in a variable
         PrimaryDrawerItem item1 = new PrimaryDrawerItem().withIdentifier(MainTeamPageActivity.IDENTIFIER).withName("Home");
         PrimaryDrawerItem item2 = new PrimaryDrawerItem().withIdentifier(TeamInfoActivity.IDENTIFIER).withName("Team Info");
-        PrimaryDrawerItem item3 = new PrimaryDrawerItem().withIdentifier(3).withName("Gallery");
-        PrimaryDrawerItem item4 = new PrimaryDrawerItem().withIdentifier(4).withName("Full Roster");
+        PrimaryDrawerItem item3 = new PrimaryDrawerItem().withIdentifier(GalleryActivity.IDENTIFIER).withName("Gallery");
+        PrimaryDrawerItem item4 = new PrimaryDrawerItem().withIdentifier(FullRosterActivity.IDENTIFIER).withName("Full Roster");
         PrimaryDrawerItem item5 = new PrimaryDrawerItem().withIdentifier(5).withName("Your starting 5");
 
 //create the drawer and remember the `Drawer` result object
@@ -124,6 +125,16 @@ public class DrawerAndTitleFragment extends Fragment {
                             }
                         }
 
+                        else if (identifier == FullRosterActivity.IDENTIFIER) {
+                            if (getActivity().getClass().equals(FullRosterActivity.class))
+                                return false;
+                            else {
+                                Intent intent = new Intent(getContext(), FullRosterActivity.class);
+
+                                startActivity(intent);
+                                return true;
+                            }
+                        }
                         return false;
 
                     }

@@ -11,6 +11,7 @@ import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
 import com.example.nikola.nbateamwiki.R;
+import com.example.nikola.nbateamwiki.views.FullRoster.FullRosterActivity;
 import com.example.nikola.nbateamwiki.views.Gallery.GalleryActivity;
 import com.example.nikola.nbateamwiki.views.TeamInfoPage.TeamInfoActivity;
 import com.firebase.ui.storage.images.FirebaseImageLoader;
@@ -27,6 +28,7 @@ public class MainTeamPageFragment extends Fragment {
 
     private View mTeamInfoButton;
     private View mGalleryButton;
+    private View mFullRosterButton;
 
     public MainTeamPageFragment() {
         // Required empty public constructor
@@ -50,13 +52,25 @@ public class MainTeamPageFragment extends Fragment {
 
 //trying different codes to initiate onClick events
 
-        mGalleryButton = view.findViewById(R.id.team_history_button);
+        mGalleryButton = view.findViewById(R.id.gallery_button);
         mGalleryButton.setOnClickListener(item -> {
             launchGalleryActivity();
         });
 
+        mFullRosterButton = view.findViewById(R.id.full_roster_button);
+        mFullRosterButton.setOnClickListener(item -> {
+            launchFullRosterActivity();
+        });
+
 
         return view;
+
+    }
+
+    private void launchFullRosterActivity() {
+
+        Intent intent = new Intent(getActivity(), FullRosterActivity.class);
+        startActivity(intent);
 
     }
 
