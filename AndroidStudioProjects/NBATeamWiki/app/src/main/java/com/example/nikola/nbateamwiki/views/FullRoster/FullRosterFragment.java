@@ -14,6 +14,8 @@ import android.widget.ListView;
 import com.example.nikola.nbateamwiki.R;
 import com.example.nikola.nbateamwiki.utils.Player;
 import com.example.nikola.nbateamwiki.views.PlayerPageActivity;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -22,6 +24,7 @@ public class FullRosterFragment extends Fragment implements AdapterView.OnItemCl
 
     private ListView mRosterListView;
     private ArrayAdapter<Player> mPlayersAdapter;
+    private FirebaseFirestore mDb;
 
     public FullRosterFragment() {
         // Required empty public constructor
@@ -38,16 +41,32 @@ public class FullRosterFragment extends Fragment implements AdapterView.OnItemCl
         mRosterListView = view.findViewById(R.id.roster_list);
 
         mPlayersAdapter = new ArrayAdapter<>(getContext(), android.R.layout.simple_list_item_1);
+        
 
-        mPlayersAdapter.add(new Player("TestName", 4, 4));
-
+        addPlayersFromDb();
+        
+        
         mRosterListView.setAdapter(mPlayersAdapter);
 
          mRosterListView.setOnItemClickListener(this);
 
 
 
+
         return view;
+    }
+
+    private void addPlayersFromDb() {
+        mDb = FirebaseFirestore.getInstance();
+
+        mDb.collection("roster").get()
+                .addOnCompleteListener(task -> {
+
+                   mPlayersAdapter.addAll(task.getResult().toObjects(Player.class));
+
+                });
+
+
     }
 
     public static Fragment newInstance() {
@@ -62,7 +81,7 @@ public class FullRosterFragment extends Fragment implements AdapterView.OnItemCl
 
         Intent intent = new Intent(getContext(), PlayerPageActivity.class);
 
-        intent.putExtra("Current Player", player.getName());
+        intent.putExtra("Current Player", player.name);
 
         startActivity(intent);
 

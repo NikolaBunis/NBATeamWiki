@@ -4,11 +4,11 @@ import java.util.List;
 
 public class Player {
 
-    private String name;
-    private int number;
-    private int preferredPosition;
-    private String info;
-    private List<Integer> possiblePositions;
+    public String name;
+    public int number;
+    public int preferredPosition;
+    public String info;
+    public List<Integer> possiblePositions;
 
     public Player() {
     }
@@ -19,49 +19,20 @@ public class Player {
         this.preferredPosition = preferredPosition;
     }
 
-    public String getName() {
-        return name;
-    }
+    @Override
+    public String toString() {
 
-    public void setName(String name) {
-        this.name = name;
-    }
+        String prefPosition = "";
 
-    public int getNumber() {
-        return number;
-    }
+        switch (preferredPosition){
+            case 1: prefPosition = "Point Guard"; break;
+            case 2: prefPosition = "Shooting Guard"; break;
+            case 3: prefPosition = "Small Forward"; break;
+            case 4: prefPosition = "Power Forward"; break;
+            case 5: prefPosition = "Center"; break;
+        }
 
-    public void setNumber(int number) {
-        this.number = number;
-    }
 
-    public int getPreferredPosition() {
-        return preferredPosition;
-    }
-
-    public void setPreferredPosition(int preferredPosition) {
-        this.preferredPosition = preferredPosition;
-    }
-
-    public List<Integer> getPossiblePositions() {
-        return possiblePositions;
-    }
-
-    public void setPossiblePositions(List<Integer> possiblePositions) {
-        this.possiblePositions = possiblePositions;
-    }
-
-    public void addPossiblePosition(int position){
-
-        possiblePositions.add(position);
-
-    }
-
-    public String getInfo() {
-        return info;
-    }
-
-    public void setInfo(String info) {
-        this.info = info;
+        return number + ". " + name + " - preferred position: " + prefPosition;
     }
 }
