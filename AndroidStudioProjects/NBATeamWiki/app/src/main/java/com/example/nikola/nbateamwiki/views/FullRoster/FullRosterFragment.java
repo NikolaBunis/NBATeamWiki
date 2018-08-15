@@ -80,8 +80,11 @@ public class FullRosterFragment extends Fragment implements AdapterView.OnItemCl
         Player player = mPlayersAdapter.getItem(position);
 
         Intent intent = new Intent(getContext(), PlayerPageActivity.class);
-
+//the first extra is in, as it is always null for some reason I cannot figure out...
+        //but I need the other two extras, so I left it there :(
         intent.putExtra("Current Player", player.name);
+        intent.putExtra("profilePictureURL", player.profilePictureURL);
+        intent.putExtra("playerInfo", player.info);
 
         startActivity(intent);
 

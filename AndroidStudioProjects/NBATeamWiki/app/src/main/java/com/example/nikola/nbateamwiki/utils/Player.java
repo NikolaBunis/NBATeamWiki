@@ -8,6 +8,7 @@ public class Player {
     public int number;
     public int preferredPosition;
     public String info;
+    public String profilePictureURL;
     public List<Integer> possiblePositions;
 
     public Player() {
