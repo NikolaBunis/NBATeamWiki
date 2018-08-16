@@ -13,9 +13,7 @@ import android.widget.ListView;
 
 import com.example.nikola.nbateamwiki.R;
 import com.example.nikola.nbateamwiki.utils.Player;
-import com.example.nikola.nbateamwiki.views.PlayerPageActivity;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.QueryDocumentSnapshot;
 
 /**
  * A simple {@link Fragment} subclass.

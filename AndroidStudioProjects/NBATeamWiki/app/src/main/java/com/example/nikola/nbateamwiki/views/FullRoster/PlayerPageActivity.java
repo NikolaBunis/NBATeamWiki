@@ -1,4 +1,4 @@
-package com.example.nikola.nbateamwiki.views;
+package com.example.nikola.nbateamwiki.views.FullRoster;
 
 import android.app.Fragment;
 import android.content.Intent;

@@ -13,6 +13,7 @@ import com.bumptech.glide.Glide;
 import com.example.nikola.nbateamwiki.R;
 import com.example.nikola.nbateamwiki.views.FullRoster.FullRosterActivity;
 import com.example.nikola.nbateamwiki.views.Gallery.GalleryActivity;
+import com.example.nikola.nbateamwiki.views.StartingFive.StartingFiveActivity;
 import com.example.nikola.nbateamwiki.views.TeamInfoPage.TeamInfoActivity;
 import com.firebase.ui.storage.images.FirebaseImageLoader;
 import com.google.firebase.storage.FirebaseStorage;
@@ -29,6 +30,7 @@ public class MainTeamPageFragment extends Fragment {
     private View mTeamInfoButton;
     private View mGalleryButton;
     private View mFullRosterButton;
+    private View mStartingFiveButton;
 
     public MainTeamPageFragment() {
         // Required empty public constructor
@@ -62,9 +64,19 @@ public class MainTeamPageFragment extends Fragment {
             launchFullRosterActivity();
         });
 
+        mStartingFiveButton = view.findViewById(R.id.starting_five_button);
+        mStartingFiveButton.setOnClickListener(item -> {
+            launchStartingFiveActivity();
+        });
+
 
         return view;
 
+    }
+
+    private void launchStartingFiveActivity() {
+        Intent intent = new Intent(getActivity(), StartingFiveActivity.class);
+        startActivity(intent);
     }
 
     private void launchFullRosterActivity() {

@@ -13,6 +13,7 @@ import com.example.nikola.nbateamwiki.R;
 import com.example.nikola.nbateamwiki.views.FullRoster.FullRosterActivity;
 import com.example.nikola.nbateamwiki.views.Gallery.GalleryActivity;
 import com.example.nikola.nbateamwiki.views.MainTeamPage.MainTeamPageActivity;
+import com.example.nikola.nbateamwiki.views.StartingFive.StartingFiveActivity;
 import com.example.nikola.nbateamwiki.views.TeamInfoPage.TeamInfoActivity;
 import com.example.nikola.nbateamwiki.views.base.BaseActivity;
 import com.mikepenz.materialdrawer.Drawer;
@@ -65,7 +66,7 @@ public class DrawerAndTitleFragment extends Fragment {
         PrimaryDrawerItem item2 = new PrimaryDrawerItem().withIdentifier(TeamInfoActivity.IDENTIFIER).withName("Team Info");
         PrimaryDrawerItem item3 = new PrimaryDrawerItem().withIdentifier(GalleryActivity.IDENTIFIER).withName("Gallery");
         PrimaryDrawerItem item4 = new PrimaryDrawerItem().withIdentifier(FullRosterActivity.IDENTIFIER).withName("Full Roster");
-        PrimaryDrawerItem item5 = new PrimaryDrawerItem().withIdentifier(5).withName("Your starting 5");
+        PrimaryDrawerItem item5 = new PrimaryDrawerItem().withIdentifier(StartingFiveActivity.IDENTIFIER).withName("Your starting 5");
 
 //create the drawer and remember the `Drawer` result object
         Drawer result = new DrawerBuilder()
@@ -130,6 +131,16 @@ public class DrawerAndTitleFragment extends Fragment {
                                 return false;
                             else {
                                 Intent intent = new Intent(getContext(), FullRosterActivity.class);
+
+                                startActivity(intent);
+                                return true;
+                            }
+                        }
+                        else if (identifier == StartingFiveActivity.IDENTIFIER) {
+                            if (getActivity().getClass().equals(StartingFiveActivity.class))
+                                return false;
+                            else {
+                                Intent intent = new Intent(getContext(), StartingFiveActivity.class);
 
                                 startActivity(intent);
                                 return true;

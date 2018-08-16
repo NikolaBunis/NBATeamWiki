@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/md_dark_background"
-    tools:context=".views.PlayerPageActivity">
+    tools:context=".views.FullRoster.PlayerPageActivity">
 
 
     <ScrollView
@@ -18,7 +18,7 @@
             <ImageView
                 android:id="@+id/player_picture"
                 android:layout_width="match_parent"
-                android:layout_height="280dp"
+                android:layout_height="350dp"
                 android:scaleType="centerCrop"/>
 
             <TextView
