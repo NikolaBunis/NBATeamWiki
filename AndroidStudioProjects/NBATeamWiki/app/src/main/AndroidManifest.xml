@@ -23,7 +23,7 @@
         <activity android:name=".views.Gallery.FullImageActivity" />
         <activity android:name=".views.FullRoster.FullRosterActivity" />
         <activity android:name=".views.FullRoster.PlayerPageActivity" />
-        <activity android:name=".views.StartingFive.StartingFiveActivity"></activity>
+        <activity android:name=".views.FavouritePlayer.FavouritePlayerActivity" />
     </application>
 
 </manifest>

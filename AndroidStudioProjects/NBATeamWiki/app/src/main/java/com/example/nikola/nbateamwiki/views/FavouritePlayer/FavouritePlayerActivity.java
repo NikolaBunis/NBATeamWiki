@@ -1,14 +1,12 @@
-package com.example.nikola.nbateamwiki.views.StartingFive;
+package com.example.nikola.nbateamwiki.views.FavouritePlayer;
 
-import android.app.Activity;
 import android.app.Fragment;
 import android.os.Bundle;
 
 import com.example.nikola.nbateamwiki.R;
-import com.example.nikola.nbateamwiki.views.MainTeamPage.MainTeamPageFragment;
 import com.example.nikola.nbateamwiki.views.base.BaseActivity;
 
-public class StartingFiveActivity extends BaseActivity {
+public class FavouritePlayerActivity extends BaseActivity {
 
     private Fragment mToolbarFragment;
 
@@ -18,7 +16,7 @@ public class StartingFiveActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_starting_five);
+        setContentView(R.layout.activity_favourite_player);
 
         mToolbarFragment = setupDrawer();
         mMainViewFragment = setupMainFragment();
@@ -27,7 +25,7 @@ public class StartingFiveActivity extends BaseActivity {
 
     @Override
     public Fragment setupMainFragment() {
-        Fragment fragment = StartingFiveFragment.newInstance();
+        Fragment fragment = FavouritePlayerFragment.newInstance();
 
         getFragmentManager().beginTransaction().replace(R.id.main_fragment, fragment).commit();
 

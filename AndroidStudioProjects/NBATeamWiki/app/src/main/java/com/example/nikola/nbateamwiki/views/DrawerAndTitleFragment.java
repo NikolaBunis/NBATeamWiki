@@ -13,16 +13,13 @@ import com.example.nikola.nbateamwiki.R;
 import com.example.nikola.nbateamwiki.views.FullRoster.FullRosterActivity;
 import com.example.nikola.nbateamwiki.views.Gallery.GalleryActivity;
 import com.example.nikola.nbateamwiki.views.MainTeamPage.MainTeamPageActivity;
-import com.example.nikola.nbateamwiki.views.StartingFive.StartingFiveActivity;
+import com.example.nikola.nbateamwiki.views.FavouritePlayer.FavouritePlayerActivity;
 import com.example.nikola.nbateamwiki.views.TeamInfoPage.TeamInfoActivity;
-import com.example.nikola.nbateamwiki.views.base.BaseActivity;
 import com.mikepenz.materialdrawer.Drawer;
 import com.mikepenz.materialdrawer.DrawerBuilder;
 import com.mikepenz.materialdrawer.model.DividerDrawerItem;
 import com.mikepenz.materialdrawer.model.PrimaryDrawerItem;
 import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem;
-
-import javax.net.ssl.HostnameVerifier;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -66,7 +63,7 @@ public class DrawerAndTitleFragment extends Fragment {
         PrimaryDrawerItem item2 = new PrimaryDrawerItem().withIdentifier(TeamInfoActivity.IDENTIFIER).withName("Team Info");
         PrimaryDrawerItem item3 = new PrimaryDrawerItem().withIdentifier(GalleryActivity.IDENTIFIER).withName("Gallery");
         PrimaryDrawerItem item4 = new PrimaryDrawerItem().withIdentifier(FullRosterActivity.IDENTIFIER).withName("Full Roster");
-        PrimaryDrawerItem item5 = new PrimaryDrawerItem().withIdentifier(StartingFiveActivity.IDENTIFIER).withName("Your starting 5");
+        PrimaryDrawerItem item5 = new PrimaryDrawerItem().withIdentifier(FavouritePlayerActivity.IDENTIFIER).withName("Favourite Player");
 
 //create the drawer and remember the `Drawer` result object
         Drawer result = new DrawerBuilder()
@@ -136,11 +133,11 @@ public class DrawerAndTitleFragment extends Fragment {
                                 return true;
                             }
                         }
-                        else if (identifier == StartingFiveActivity.IDENTIFIER) {
-                            if (getActivity().getClass().equals(StartingFiveActivity.class))
+                        else if (identifier == FavouritePlayerActivity.IDENTIFIER) {
+                            if (getActivity().getClass().equals(FavouritePlayerActivity.class))
                                 return false;
                             else {
-                                Intent intent = new Intent(getContext(), StartingFiveActivity.class);
+                                Intent intent = new Intent(getContext(), FavouritePlayerActivity.class);
 
                                 startActivity(intent);
                                 return true;

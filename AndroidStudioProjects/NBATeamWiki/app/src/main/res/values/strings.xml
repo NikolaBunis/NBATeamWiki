@@ -9,4 +9,5 @@
     <string name="title_activity_player_page">PlayerPageActivity</string>
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="select_your_center">Select your center</string>
 </resources>
