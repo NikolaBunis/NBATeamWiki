@@ -13,14 +13,20 @@ import android.widget.Spinner;
 
 import com.bumptech.glide.Glide;
 import com.example.nikola.nbateamwiki.R;
+import com.example.nikola.nbateamwiki.utils.FavouritePlayer;
 import com.example.nikola.nbateamwiki.utils.Player;
 import com.firebase.ui.storage.images.FirebaseImageLoader;
+import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -66,16 +72,16 @@ public class FavouritePlayerFragment extends Fragment {
     private void getCurrentPicture() {
 
 
-        mDb.collection("favourite_Player")
+        mDb.collection("favourite_player")
                 .document("currentFavouritePlayer")
                 .get()
                 .addOnCompleteListener(task -> {
+
                     DocumentSnapshot doc = task.getResult();
 
-                    Player obj = doc.toObject(Player.class);
+                    Player object = doc.toObject(Player.class);
 
-
-                    insertPicture(mPlayerPicture, obj.profilePictureURL);
+                    insertPicture(mPlayerPicture, object.profilePictureURL);
 
 
                 });
@@ -97,13 +103,49 @@ public class FavouritePlayerFragment extends Fragment {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 
+                String playerName = (String) parent.getItemAtPosition(position);
+
+                mDb.collection("roster").get()
+                        .addOnCompleteListener(task -> {
+                            List<Player> players = task.getResult()
+                                    .toObjects(Player.class);
+
+                            Map<String, Player> map = new HashMap<>();
+
+                            for (Player player : players) {
+
+                                map.put(player.name, player);
+                            }
+
+
+                            Player currentFavouritePlayer = map.get(playerName);
+
+                            mDb.collection("favourite_player")
+                                    .document("currentFavouritePlayer")
+                                    .delete();
+
+                            mDb.collection("favourite_player")
+                                    .document("currentFavouritePlayer")
+                                    .set(currentFavouritePlayer);
+
+
+                            establishPlayer(view);
+
+                        });
+
+                //this method should attempt to set the "currentFavouritePlayer document"
+                //to display the player selected from the spinner option selected
+                // and then re-establish the picture
+
 
             }
+
 
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
-                // TODO Auto-generated method stub
+
             }
+
         });
     }
 
